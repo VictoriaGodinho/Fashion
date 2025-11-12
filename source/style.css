@@ -1,0 +1,168 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background: url("./images/background.png") no-repeat center center fixed;
+  background-size: cover;
+  color: #e02177;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Main app wrapper */
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  padding: 60px 40px;
+}
+
+/* --- Overall 2-column layout --- */
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* --- Left column (text) --- */
+.header {
+  flex: 1;
+  max-width: 480px;
+  margin-top: 80px;
+}
+
+.header h1 {
+  font-size: 5rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  color: #ffabd1;
+  text-shadow: 0 0 12px #430028, 0 0 24px #ff4fb8;
+}
+
+.header p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #f8ddee;
+}
+
+/* --- Right column --- */
+.studio {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  flex-shrink: 1;
+}
+
+/* Barbie designer stage */
+.designer-stage {
+  position: relative;
+  width: 500px;
+  height: 666px;
+  overflow: hidden;
+}
+
+.barbie-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Fabric zones */
+.fabric-zone {
+  position: absolute;
+  z-index: 1;
+  border: 2px dashed transparent;
+  transition: border 0.2s ease;
+}
+
+.fabric-zone:hover {
+  border: 2px dashed #e02177;
+}
+
+/* Placement of fabric zones */
+.top-zone {
+  top: 140px;
+  left: 190px;
+  width: 100px;
+  height: 91.5px;
+}
+
+.skirt-zone {
+  top: 231.5px;
+  left: 200px;
+  width: 100px;
+  height: 60px;
+}
+
+.boots-zone {
+  top: 405px;
+  left: 200px;
+  width: 130px;
+  height: 130px;
+}
+
+/* Fabric applied images */
+.fabric-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  opacity: 0.9;
+}
+
+/* Fabric selector panel */
+.fabric-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fabric-panel h2 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.fabric-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  grid-auto-rows: 80px;
+  gap: 12px;
+}
+
+.fabric-option {
+  width: 80px;
+  height: 80px;
+  border: 3px solid #e0218a;
+  object-fit: cover;
+  cursor: grab;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.fabric-option:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 12px rgba(255, 128, 200, 0.6);
+}
+@media (max-width: 1000px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .header {
+    margin: 0 auto;
+    text-align: center;
+  }
+  .studio {
+    flex-direction: column;
+    align-items: center;
+  }
+}
